@@ -1,11 +1,12 @@
-Notes
-
-if a new page is loaded then, it will have be clean. In order to get the old data, whenever data is added it has to be stored in a databases so that when a new page is made, it will load from the database. Using JSON to do this. 
-
-
-
 1) Go to the cmd of the folder
 2) type node server.js
-3) profit
+3) go to localhost:8080 or the localhost on your computer
+4) open any amount of pages and the hello will be updated across each one. 
+
+Things to do:
+
+1) add database dependancy and user login abilty: chat room interface
+2) delete database if no connections exist
+3) sql?
 
 
