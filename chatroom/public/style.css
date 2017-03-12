@@ -1,0 +1,41 @@
+body {
+	font-family: Helvetica, sans-serif;
+	padding:0;
+	margin-left: 10; 
+}
+
+h1 {
+	color: navy;
+	margin-left: 20px;
+	display: inline-block;
+}
+
+button{
+background-color: #046380;
+color: #FFF;
+border: none;
+font-size: 15px;
+padding-left: 10px 15px;
+margin-bottom: -10px;
+border-radius: 4px;
+outline: none;
+margin-left: 18px;
+position: relative;
+top: 45px;
+left:120px;
+box-shadow: 2px 2px 0 #034154
+}
+
+div {
+	margin-top: 10px;
+	margin-left: 20px;
+}
+
+li{
+	list-style-type: none;
+}
+
+form {
+	margin-left: 20px;
+	width: 100px;
+}

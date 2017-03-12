@@ -3,6 +3,7 @@ var person;
 var socket;
 var btn = document.getElementById("press");
 var place = document.getElementById("list");
+var form = document.getElementById("conversation");
 
 function init(){
 	var xobj = new XMLHttpRequest();
@@ -12,7 +13,7 @@ function init(){
 			person = JSON.parse(xobj.responseText); 
 			if(person){//not sure if this check helps
 				for(var i=0;i<person.things.length;i++){
-					place.insertAdjacentHTML('beforeend',"<p>"+ person.things[i].text +"</p>");
+					place.insertAdjacentHTML('beforeend',"<li>"+ person.things[i].text +"</li>");
 				}
 			}
 		}else{
@@ -34,8 +35,10 @@ function update(data){
 
 //button listeneer
 btn.addEventListener("click", function(){
-	var string = "hello";
-	var htmlString = "<p>" +string + "</p>";
+	//var string = "hello";
+	var string = form.value;
+	form.value = "";
+	var htmlString = "<li>" +string + "</li>";
 	place.insertAdjacentHTML('beforeend',htmlString);
 
 	var data = {
@@ -50,7 +53,7 @@ btn.addEventListener("click", function(){
 });
 
 function sendDataToFile(data){
-	person.things.push({text:data}); //pushing new data to object that holds the 
+	person.things.push({text:data, id: socket.id}); //pushing new data to object that holds the 
 	var sendString = JSON.stringify(person);
 	console.log(sendString);
 	socket.emit('update-file',sendString);

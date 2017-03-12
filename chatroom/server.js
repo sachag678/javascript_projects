@@ -20,6 +20,7 @@ function newConnection(socket){
 	socket.on('update-file', updateFile);
 	//socket.broadcast.emit('init',readfile);
 
+
 	function buttonPress(data){
 		socket.broadcast.emit('button-press',data); //broadcast to everyone connected
 		
